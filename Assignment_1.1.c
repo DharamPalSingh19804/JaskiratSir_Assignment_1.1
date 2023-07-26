@@ -37,7 +37,7 @@ int main() {
     }
 
                                                                       // now we will combine both to get the 10-digit random integer
-    size_t randomNumber = firstDigit * 1000000000ll + base;
+    size_t randomNumber = firstDigit * 1000000000ll + base;           // explicitly indicating that the constant 1000000000 should be treated as a long integer(long long walle jaise) rather than a regular int
 
     printf("Random 10-digit integer: %lu\n", randomNumber);
     printf("The Highest Base of a %lu is 10.\n", randomNumber);
