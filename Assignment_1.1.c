@@ -18,7 +18,7 @@ Base of a 5294967296 is 10.”
 #include <time.h>          // generate different for different times
 
 
-long long generateRandomNumber(long long min, long long max)           // generate a random integer between min and max (inclusive)
+size_t generateRandomNumber(size_t min, size_t max)           // generate a random integer between min and max (inclusive)
 {
     return (rand() % (max - min + 1)) + min;                           // no issues if we remove  min 
 }
@@ -31,16 +31,16 @@ int main() {
     int firstDigit = generateRandomNumber(6, 9);
 
                                                                        // here now we will generate the remaining 9 digits randomly (between 0 and 9)
-    long long base = 0;
+    size_t base = 0;
     for (int i = 0; i < 9; i++) {
         base = base * 10 + generateRandomNumber(0, 9);
     }
 
                                                                       // now we will combine both to get the 10-digit random integer
-    long long randomNumber = firstDigit * 1000000000LL + base;
+    size_t randomNumber = firstDigit * 1000000000ll + base;
 
-    printf("Random 10-digit integer: %lld\n", randomNumber);
-    printf("The Highest Base of a %lld is 10.\n", randomNumber);
+    printf("Random 10-digit integer: %lu\n", randomNumber);
+    printf("The Highest Base of a %lu is 10.\n", randomNumber);
 
     return 0;
 }
